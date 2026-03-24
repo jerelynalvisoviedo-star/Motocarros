@@ -119,5 +119,5 @@ if not st.session_state.db.empty:
     st.subheader("📊 Historial de Reportes")
     st.dataframe(st.session_state.db, use_container_width=True)
     
-    csv = st.session_state.db.to_csv(index=False).encode('utf-8')
-    st.download_button("💾 Descargar Historial (CSV)", data=csv, file_name=f"reporte_ensamble_{datetime.now().date()}.csv", mime='text/csv')
+    csv = st.session_state.db.to_xlsx(index=False).encode('utf-8')
+    st.download_button("💾 Descargar Historial (XLSX)", data=xlsx, file_name=f"reporte_ensamble_{datetime.now().date()}.xlsx", mime='text/xlsx')
